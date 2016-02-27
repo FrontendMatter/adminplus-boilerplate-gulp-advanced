@@ -6,22 +6,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "surge --project ./dist"
   },
-  "keywords": [
-    "adminplus",
-    "adminplus-lite",
-    "bootstrap",
-    "bootstrap4",
-    "gulp",
-    "gulp-sass",
-    "node-sass",
-    "boilerplate",
-    "workflow",
-    "theme",
-    "sass",
-    "browserify",
-    "watchify",
-    "watch"
-  ],
   "author": "Laza Bogdan <laza.bogdan@macro-net.ro>",
   "license": "ISC",
   "dependencies": {
