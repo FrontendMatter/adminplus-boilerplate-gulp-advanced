@@ -60,7 +60,9 @@ gulp.task('clean-browserify', function (cb) {
 	if (!__CLEAN) {
 		return cb()
 	}
-	del(__CLEAN_BROWSERIFY, cb);
+	del(__CLEAN_BROWSERIFY).then(function () {
+		cb()
+	});
 });
 
 // CLEAN DIST CSS
@@ -68,7 +70,9 @@ gulp.task('clean-css', function (cb) {
 	if (!__CLEAN) {
 		return cb()
 	}
-	del(__CLEAN_CSS, cb);
+	del(__CLEAN_CSS).then(function () {
+		cb()
+	});
 });
 
 ////////////////
@@ -78,7 +82,7 @@ gulp.task('clean-css', function (cb) {
 // Compile Sass
 gulp.task('sass', ['clean-css'], function () {
 	return gulp.src(__SRC_SASS)
-		// (optional) remove if you dont need sourcemaps
+		// (optional) sourcemaps
 		.pipe($.if(__SOURCEMAPS, $.sourcemaps.init()))
 		// Compile Sass
 		.pipe($.sass({ 
@@ -146,7 +150,7 @@ gulp.task('browserify', ['clean-browserify'], function (callback) {
 		bundles = bundles.map(function (bundle) {
 			return {
 				src: bundle,
-				dest: 'dist/js',
+				dest: __DIST_JS,
 				bundleName: path.basename(bundle)
 			}
 		});
@@ -176,9 +180,9 @@ gulp.task('browserify', ['clean-browserify'], function (callback) {
 					// stream gulp compatible. Specifiy the
 					// desired output filename here.
 					.pipe(source(bundleConfig.bundleName))
-					// (optional) remove if you don't need to buffer file contents
+					// buffer file contents
 					.pipe(buffer())
-					// (optional) remove if you dont need sourcemaps
+					// (optional) sourcemaps
 					// loads map from browserify file
 					.pipe($.if(__SOURCEMAPS, $.sourcemaps.init({ loadMaps: true })))
 					// Add transformation tasks to the pipeline here.
@@ -216,7 +220,7 @@ gulp.task('browserify', ['clean-browserify'], function (callback) {
 			return bundle();
 		};
 
-		// Start bundling with Browserify for each bundleConfig specified
+		// Start bundling source files with Browserify
 		bundles.forEach(browserifyThis);
 	});
 });
