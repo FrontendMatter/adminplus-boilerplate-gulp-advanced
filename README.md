@@ -4,7 +4,7 @@ Advanced gulp boilerplate for [AdminPlus Lite Bootstrap Theme](https://github.co
 > Read the full guide [Advanced gulp workflow](http://adminplus.themekit.io/gulp-advanced-workflow). You can also [see a working live demo](http://gulp-advanced.adminplus-boilerplate.themekit.io) of this boilerplate.
 
 ### Features
-See [Features](http://adminplus.themekit.io/gulp-advanced-workflow/#features)
+See [Features](http://adminplus.themekit.io/gulp-advanced-workflow#features)
 
 ## Usage
 > You need to have gulp installed globally. Run `npm install -g gulp`.
