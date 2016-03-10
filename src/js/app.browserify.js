@@ -13,3 +13,6 @@ var AdminPlus = require('adminplus');
 
 // Initialize Sidebars
 AdminPlus.Sidebar.init();
+
+// Initialize Scrollbars
+AdminPlus.Scrollable();
