@@ -1,7 +1,7 @@
 {
   "name": "adminplus-boilerplate-gulp-advanced",
-  "version": "1.1.1",
-  "description": "Advanced gulp workflow using AdminPlus Lite Bootstrap Theme",
+  "version": "1.2.0",
+  "description": "Advanced gulp boilerplate using AdminPlus Lite and Bootstrap Layout",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "surge --project ./dist"
@@ -9,11 +9,13 @@
   "author": "Laza Bogdan <laza.bogdan@macro-net.ro>",
   "license": "ISC",
   "dependencies": {
-    "adminplus": "1.0.0-alpha.10",
+    "adminplus": "1.0.0-alpha.12",
     "bootstrap": "4.0.0-alpha.2",
-    "bootstrap-layout": "1.0.0-alpha.4",
+    "bootstrap-layout": "^1.0.0-alpha.8",
+    "bootstrap-layout-scrollable": "^1.0.2",
     "jquery": "^2.2.0",
     "sass-md-colors": "^1.0.0",
+    "simplebar": "github:grsmto/simplebar",
     "tether": "^1.2.0"
   },
   "devDependencies": {
